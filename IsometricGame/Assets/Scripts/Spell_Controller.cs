@@ -73,28 +73,26 @@ public class Spell_Controller : MonoBehaviour {
 
     public GameObject m_player;
 
-    [Header("Text elements")]
-    public Text qCooldown;
-    public Text wCooldown;
-    public Text eCooldown;
-    public Text rCooldown;
-
     [Header("Speed Boost")]
     public float m_boostSpeed;
     public float m_speedTime = 0.9f;
     public float m_speedCooldown = 10.0f;
+    public Image m_speedImage, m_speedCooldownImage, m_speedMeter;
 
     [Header("Dash")]
     public float m_dashDistance = 6.0f;
     public float m_dashTime = 0.2f;
     public float m_dashCooldown = 3.0f;
+    public Image m_dashImage, m_dashCooldownImage, m_dashMeter;
 
     [Header("Double Jump")]
     public float m_jumpTime = 3.0f;
     public float m_jumpCooldown = 10.0f;
+    public Image m_jumpImage, m_jumpCooldownImage, m_jumpMeter;
 
     [Header("Refresh")]
     public float m_refreshCooldown = 15.0f;
+    public Image m_refreshImage, m_refreshCooldownImage, m_refreshMeter;
 
     // Private variables
     private Player_Controller m_playerScript;
@@ -188,52 +186,53 @@ public class Spell_Controller : MonoBehaviour {
     {
         if (speedReady)
         {
-            qCooldown.text = "Speed boost: Ready";
-            qCooldown.color = Color.green;
+            m_speedImage.enabled = true;
+            m_speedCooldownImage.enabled = false;
         }
             
         else
         {
-            qCooldown.text = "Speed boost: Not ready";
-            qCooldown.color = Color.gray;
+            m_speedImage.enabled = false;
+            m_speedCooldownImage.enabled = true;
         }
             
         if (dashReady)
         {
-            wCooldown.text = "Dash: Ready";
-            wCooldown.color = Color.blue;
+            m_dashImage.enabled = true;
+            m_dashCooldownImage.enabled = false;
         }
-            
+
         else
         {
-            wCooldown.text = "Dash: Not ready";
-            wCooldown.color = Color.gray;
+            m_dashImage.enabled = false;
+            m_dashCooldownImage.enabled = true;
         }
             
 
         if (jumpReady)
         {
-            eCooldown.text = "Double jump: Ready";
-            eCooldown.color = Color.yellow;
+            m_jumpImage.enabled = true;
+            m_jumpCooldownImage.enabled = false;
         }
             
         else
         {
-            eCooldown.text = "Double jump: Not ready";
-            eCooldown.color = Color.gray;
+            m_jumpImage.enabled = false;
+            m_jumpCooldownImage.enabled = true;
+
         }
-            
+
 
         if (refreshReady)
         {
-            rCooldown.text = "Refresh: Ready";
-            rCooldown.color = Color.magenta;
+            m_refreshImage.enabled = true;
+            m_refreshCooldownImage.enabled = false;
         }
             
         else
         {
-            rCooldown.text = "Refresh: Not ready";
-            rCooldown.color = Color.gray;
+            m_refreshImage.enabled = false;
+            m_refreshCooldownImage.enabled = true;
         }
             
     }

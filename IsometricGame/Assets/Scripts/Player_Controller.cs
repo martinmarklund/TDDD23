@@ -71,7 +71,7 @@ public class Player_Controller : MonoBehaviour
 
         RaycastHit hit;
         m_groundCheckVector = transform.position;
-        m_grounded = (Physics.SphereCast(m_groundCheckVector, 0.5f, -Vector3.up, out hit, m_maxCastDistance, m_groundLayer) && Mathf.Approximately(m_jumpTimer, 1));
+        m_grounded = (Physics.SphereCast(m_groundCheckVector, 0.5f, -Vector3.up, out hit, m_maxCastDistance, 9) && Mathf.Approximately(m_jumpTimer, 1));
 
         Debug.Log("Timer: " + m_jumpTimer + " Ray: " + Physics.SphereCast(m_groundCheckVector, 0.5f, -Vector3.up, out hit, m_maxCastDistance, m_groundLayer));
         Debug.Log("Mask " + m_groundLayer.value);
